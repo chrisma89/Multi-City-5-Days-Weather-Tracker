@@ -9,6 +9,9 @@ const apiKey = "3d834375601783e4927040748b9cd39c";
 submitBtn.on("click", function(e){
   e.preventDefault();
 let cityName = $("#search-input").val().trim()
+ $("#search-input").val("")
+
+localStorage.setItem("cityName", cityName)
 
 let btngroup = $("#history")
 
@@ -75,33 +78,46 @@ fetch(queryURL)
 function day5Forecast (data) {
     console.log(data)
 
+    // 5 day forecast heading- created dynamically
     let forecastSection = $("#forecast")
 
     let forecastHeading = $("<h3>").text("5-Day Forecast: ").css({
         "margin-left" : "10px",
     })
     
-    
     forecastSection.prepend(forecastHeading)
 
-    let forecastSubsection =$(".card-container").addClass("five-day-card")
+    // 5 day forecasts cards generated and styled
+    
+    // link to html
+    let array = data.list
+     
+    for(let i = 7; i < array.length; i += 7){
+  let forecastSubsection =$(".card-container")
+    
+    let forecastbad = $("<div>").addClass("five-day-card")
+    
+    console.log(data.list)
 
-    let forecastDate = $("<h5>").text(dayjs(data.list[0].dt_text).format("DD/MM/YYYY"))
+    // variables created for date, icon, time, wind and humidity and appended to card
+    let forecastDate = $("<h5>").text(dayjs(data.list[i].dt_txt).format("DD/MM/YYYY"))
 
-    forecastSubsection.append(forecastDate)
-    let weatherIconSrc = data.list[0].weather[0].icon
+   
+    let weatherIconSrc = data.list[i].weather[0].icon
  
     let weatherIcon = $("<img>").attr("src","http://openweathermap.org/img/wn/" + weatherIconSrc + ".png")
-     forecastSubsection.append(weatherIcon)
    
      
-     let forecastTemp = ($("<p>").text ("Temp: " + parseInt((data.list[0].main.temp) - (273.15)) + " °C "));
+     let forecastTemp = ($("<p>").text ("Temp: " + parseInt((data.list[i].main.temp) - (273.15)) + " °C "));
    
    
-     let forecastWind = ($("<p>").text ("Wind: " + (data.list[0].wind.speed) + " KPH "));
+     let forecastWind = ($("<p>").text ("Wind: " + (data.list[i].wind.speed) + " KPH "));
    
    
-     let forecastHumidity = ($("<p>").text ("Humidity: " + (data.list[0].main.humidity) + " % "));
-   
-     forecastSubsection.append(forecastTemp, forecastWind,forecastHumidity)
+     let forecastHumidity = ($("<p>").text ("Humidity: " + (data.list[i].main.humidity) + " % "));
+  
+     forecastbad.append(forecastDate, weatherIcon, forecastTemp, forecastWind,forecastHumidity)
+
+     forecastSubsection.append(forecastbad)
+    }
 }
