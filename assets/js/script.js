@@ -75,7 +75,7 @@ fetch(queryURL)
 function day5Forecast (data) {
     console.log(data)
 
-    let forecastSection = $(".card-header")
+    let forecastSection = $("#forecast")
 
     let forecastHeading = $("<h3>").text("5-Day Forecast: ").css({
         "margin-left" : "10px",
@@ -84,9 +84,9 @@ function day5Forecast (data) {
     
     forecastSection.prepend(forecastHeading)
 
-    let forecastSubsection =$(".card-body")
+    let forecastSubsection =$(".card-container").addClass("five-day-card")
 
-    let forecastDate = $("<div>").text(dayjs(data.list[0].dt_text).format("DD/MM/YYYY"))
+    let forecastDate = $("<h5>").text(dayjs(data.list[0].dt_text).format("DD/MM/YYYY"))
 
     forecastSubsection.append(forecastDate)
     let weatherIconSrc = data.list[0].weather[0].icon
