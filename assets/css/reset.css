@@ -881,7 +881,7 @@ a:hover {
 }
 
 .text-primary {
-  color: #2d3e50 !important;
+  color: 2d3e50 !important;
 }
 
 .text-info {
@@ -1785,6 +1785,9 @@ label form [type='radio'] {
 .weather-header {
   background: #20084a;
   background: -webkit-linear-gradient(right, #20084a, #3463bc);
-  background: -moz-linear-gradient(right, #20084a, #3463bc);
+  background: -moz-linear-gradient(right, #20084a, #091936);
   background: linear-gradient(to left, #20084a, #3463bc);
 }
+
+
+
