@@ -10,6 +10,7 @@ submitBtn.on("click", function (e) {
   let cityName = $("#search-input").val().trim();
   $("#search-input").val("");
   createNewButton(cityName);
+  todayForecast(cityName)
   addToStorage(cityName);
 });
 
