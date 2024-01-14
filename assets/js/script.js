@@ -110,3 +110,14 @@ function addToStorage (cityName) {
     // buttonArray =[];
     // buttonArray.push(newBtn)
 }
+
+$(document).ready(function(){
+  let storageArray = localStorage.getItem("cities");
+if(storageArray){
+  let reloadArray = JSON.parse(storageArray)
+
+   reloadArray.forEach(function(cityName){
+    createNewButton(cityName)
+   })
+}
+})
