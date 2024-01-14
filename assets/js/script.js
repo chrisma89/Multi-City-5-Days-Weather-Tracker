@@ -8,6 +8,8 @@ let cityName = $("#search-input").val().trim()
  $("#search-input").val("")
 
 createNewButton(cityName)
+addToStorage(cityName)
+
 
 })
 
@@ -83,11 +85,28 @@ let newBtn = $("<button>").text(cityName).addClass("list-group-button mb-3").css
     "width" : "650%" ,
     })
     btngroup.append(newBtn)
+  
 newBtn.on("click", function(e){
     e.preventDefault();
     todayForecast(cityName)
     });
     
 }
-// localStorage.setItem("cityName", cityName)
+}
+
+function addToStorage (cityName) {
+
+   
+      
+        let storageArray= JSON.parse(localStorage.getItem("cities")) || [];
+
+        if(!storageArray.includes(cityName)){
+            storageArray.push(cityName)
+        }
+        localStorage.setItem("cities", JSON.stringify(storageArray))
+        
+       
+    //   localStorage.setItem("Button", newBtn)
+    // buttonArray =[];
+    // buttonArray.push(newBtn)
 }
