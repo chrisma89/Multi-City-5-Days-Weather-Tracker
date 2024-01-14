@@ -33,7 +33,7 @@ fetch(queryURL)
     })
     .then(function (data) {
         console.log(data);        
-  const cityDisplay = $("#today")
+  const cityDisplay = $("#today").addClass("card")
   cityDisplay.empty()
   let cityDisplayHeading =($("<h2>").text(cityName + " (" + dayjs().format("DD/MM/YYYY") + ")" ));
  let weatherIconSrc = data.list[0].weather[0].icon
@@ -55,7 +55,7 @@ function day5Forecast (data) {
     forecastSubsection.empty()
     forecastSection.empty()
     let forecastHeading = $("<h3>").text("5-Day Forecast: ").css({
-        "margin-left" : "10px",
+        "margin-left" : "0px",
     })
     forecastSection.prepend(forecastHeading)
     // 5 day forecasts cards generated and styled
@@ -82,7 +82,8 @@ function createNewButton (cityName){
     if (btngroup.find(`button:contains('${cityName}')`).length === 0){
 let newBtn = $("<button>").text(cityName).addClass("list-group-button mb-3 history-btn").css({
     "font-size": "25px" , 
-    "width" : "650%" ,
+    "width" : "675%" ,
+    "margin-left" : "-7px",
     })
     btngroup.append(newBtn)
   
