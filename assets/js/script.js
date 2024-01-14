@@ -80,7 +80,7 @@ function day5Forecast (data) {
 function createNewButton (cityName){
     let btngroup = $("#history")
     if (btngroup.find(`button:contains('${cityName}')`).length === 0){
-let newBtn = $("<button>").text(cityName).addClass("list-group-button mb-3").css({
+let newBtn = $("<button>").text(cityName).addClass("list-group-button mb-3 history-btn").css({
     "font-size": "25px" , 
     "width" : "650%" ,
     })

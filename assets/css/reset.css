@@ -1731,9 +1731,10 @@ label form [type='radio'] {
   width: 25rem;
   margin-bottom: 5px;
   margin-right: 10px;
-  margin-left: 0%;
+  margin-left: -15px;
   padding-right: 15px;
   padding-left: 15px;
+  padding-top: 10px;
   background-color: #2d3e50;
   color: white;
 }
