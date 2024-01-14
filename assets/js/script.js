@@ -16,7 +16,7 @@ submitBtn.on("click", function (e) {
 
 // function to call the api and dispaly current weather conditions
 function todayForecast(cityName) {
-  let queryURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&weather&limit=5&appid=${apiKey}`;
+  let queryURL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&weather&limit=5&appid=${apiKey}`;
 
   // fetch call one to get geo data
   fetch(queryURL)
@@ -27,7 +27,7 @@ function todayForecast(cityName) {
       // assign variables to store necessary data for second fetch call
       let latitude = data[0].lat;
       let longitude = data[0].lon;
-      let forecastURl = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+      let forecastURl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 
       // fetch call two to collect 5 day forecast data
       fetch(forecastURl)
