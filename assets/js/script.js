@@ -24,6 +24,7 @@ function todayForecast(cityName) {
       return response.json();
     })
     .then(function (data) {
+      console.log(data)
       // assign variables to store necessary data for second fetch call
       let latitude = data[0].lat;
       let longitude = data[0].lon;
@@ -82,12 +83,12 @@ function day5Forecast(data) {
   forecastSection.prepend(forecastHeading);
 
   // 5 day forecasts cards generated and styled with for loop
-  let array = data.list;
+  let forecastArray = data.list;
 
    // start i at 7, because the last day in the data doesnt have the current time slot.
   // since forecast is in 3-hour slot , we increment by 8
 
-  for (let i = 7; i < array.length; i += 8) {
+  for (let i = 7; i < forecastArray.length; i += 8) {
     let forecastCards = $("<div>").addClass("five-day-card d-flex");
 
     // variables created for date, icon, time, wind and humidity and appended to card
