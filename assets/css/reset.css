@@ -1450,7 +1450,6 @@ label form [type='radio'] {
     flex-grow: 1;
     flex-basis: 0;
   }
-  
   .col-md-1 {
     flex: 0 0 8.33333%;
     max-width: 8.33333%;

@@ -46,7 +46,7 @@ The code can be viewed at github: https://github.com/chrisma89/Chrisma-5DAY-Weat
 ### Usage
 
 
-The screenshot of the webpage is below : ![webpagescreenshot]()
+The screenshot of the webpage is below : ![webpagescreenshot](./assets/images/webpage-screenshot.png)
 
 ### Credits
 - Thank you to the curriculum team behind bootcampspot for the starter files.
