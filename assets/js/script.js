@@ -36,7 +36,7 @@ function todayForecast(cityName) {
         })
         .then(function (data) {
           // target html element to dynamically add data
-          const cityDisplay = $("#today").addClass("card");
+          const cityDisplay = $("#today").addClass("card d-flex");
           cityDisplay.empty();
           let cityDisplayHeading = $("<h2>").text(
             cityName + " (" + dayjs().format("DD/MM/YYYY") + ")"
@@ -84,8 +84,11 @@ function day5Forecast(data) {
   // 5 day forecasts cards generated and styled with for loop
   let array = data.list;
 
+   // start i at 7, because the last day in the data doesnt have the current time slot.
+  // since forecast is in 3-hour slot , we increment by 8
+
   for (let i = 7; i < array.length; i += 8) {
-    let forecastCards = $("<div>").addClass("five-day-card");
+    let forecastCards = $("<div>").addClass("five-day-card d-flex");
 
     // variables created for date, icon, time, wind and humidity and appended to card
     let forecastDate = $("<h5>").text(
@@ -125,7 +128,7 @@ function createNewButton(cityName) {
       .addClass("list-group-button mb-3 history-btn")
       .css({
         "font-size": "25px",
-        width: "675%",
+        "width": "675%",
         "margin-left": "-7px",
       });
     btngroup.append(newBtn);
