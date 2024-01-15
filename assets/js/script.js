@@ -44,7 +44,7 @@ function todayForecast(cityName) {
           let weatherIconSrc = data.list[0].weather[0].icon;
           let weatherIcon = $("<img>").attr(
             "src",
-            "http://openweathermap.org/img/wn/" + weatherIconSrc + ".png"
+            "https://openweathermap.org/img/wn/" + weatherIconSrc + ".png"
           );
           cityDisplayHeading.append(weatherIcon);
           let cityTemp = $("<p>").text(
@@ -94,7 +94,7 @@ function day5Forecast(data) {
     let weatherIconSrc = data.list[i].weather[0].icon;
     let weatherIcon = $("<img>").attr(
       "src",
-      "http://openweathermap.org/img/wn/" + weatherIconSrc + ".png"
+      "https://openweathermap.org/img/wn/" + weatherIconSrc + ".png"
     );
     let forecastTemp = $("<p>").text(
       "Temp: " + parseInt(data.list[i].main.temp - 273.15) + " °C "
