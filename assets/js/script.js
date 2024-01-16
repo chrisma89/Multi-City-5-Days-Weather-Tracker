@@ -24,7 +24,7 @@ function todayForecast(cityName) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
+      
       // assign variables to store necessary data for second fetch call
       let latitude = data[0].lat;
       let longitude = data[0].lon;
