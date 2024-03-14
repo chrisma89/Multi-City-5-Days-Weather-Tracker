@@ -8,10 +8,12 @@ let submitBtn = $("#search-button");
 submitBtn.on("click", function (e) {
   e.preventDefault();
   let cityName = $("#search-input").val().trim();
+  if(cityName){
   $("#search-input").val("");
   createNewButton(cityName);
   todayForecast(cityName)
   addToStorage(cityName);
+  }
 });
 
 // function to call the api and dispaly current weather conditions
