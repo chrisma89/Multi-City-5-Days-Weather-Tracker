@@ -1807,3 +1807,17 @@ flex-direction: column;
   flex-direction : column;
 }
 
+
+.card-container {
+  display: flex;
+  flex-direction: row; 
+}
+
+
+@media (max-width: 768px) {
+  .card-container {
+    /* display: flex; */
+    flex-direction: column;
+    padding-left: 100px;
+  }
+}
