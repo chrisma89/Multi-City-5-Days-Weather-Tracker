@@ -1746,10 +1746,10 @@ label form [type='radio'] {
 
 .history-btn {
   text-align: center;
-  display: inline-block;
+  display: flex;
   padding: 0.5rem 1.2rem;
-  margin: 0.5rem;
-  width: 100%;
+  /* margin: 0.5rem; */
+  /* width: 100%; */
   text-decoration: none;
   font-size: 1rem;
   border-radius: 0.3rem;
@@ -1759,11 +1759,16 @@ label form [type='radio'] {
   background-color: #aeaeae;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
+#history {
 
+display: flex;
+flex-direction: column;
+
+}
 .search-button {
   /* text-align: inherit; */
   margin: 0.5rem;
-  width: 100%;
+  width: vw;
   background-color: #5098e6;
   color: #d9e9e8;
 }
@@ -1796,5 +1801,9 @@ label form [type='radio'] {
   background: linear-gradient(to left, #20084a, #3463bc);
 }
 
-
+.list-group{
+  display: flex;
+  width : 100%;
+  flex-direction : column;
+}
 

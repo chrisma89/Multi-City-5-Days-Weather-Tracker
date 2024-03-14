@@ -131,7 +131,7 @@ function createNewButton(cityName) {
       .addClass("list-group-button mb-3 history-btn")
       .css({
         "font-size": "25px",
-        "width": "675%",
+        // "width": "675%",
         "margin-left": "-7px",
       });
     btngroup.append(newBtn);
