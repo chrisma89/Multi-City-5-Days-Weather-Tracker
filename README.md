@@ -40,7 +40,7 @@ This repository has been built using
 
 ### Installation
 
-This webpage can be rendered by visiting the url : https://chrisma89.github.io/Chrisma-5DAY-Weather-Dashboard/
+This webpage can be rendered by visiting the url : https://chrisma89.github.io/Multi-City-5-Days-Weather-Tracker/
 The code can be viewed at github: https://github.com/chrisma89/Chrisma-5DAY-Weather-Dashboard
 
 ### Usage
